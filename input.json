@@ -1,0 +1,42 @@
+{
+	"Attributes": {
+		"nameID": "Image1",
+		"size": {
+			"imLength": "256",
+			"imWidth": "256"
+		}
+	},
+	"Groups": {
+		"Group1": {
+			"nameID": "Group1",
+			"components":	{
+				"component1": {
+					"nameID": "component1",
+					"origin": "2,3",
+					"angle": "pi/2",
+					"magnitude": "5",
+					"thickness": "1"
+				},
+				"component2": {
+					"nameID": "component2",
+					"origin": "3,3",
+					"angle": "pi/3",
+					"magnitude": "2",
+					"thickness": "12"
+				}
+			}
+		},
+		"Group2": {
+			"nameID":  "Group2",
+			"components": {
+				"component3": {
+					"nameID": "component3",
+					"origin": "23,3",
+					"angle": "pi",
+					"magnitude": "8",
+					"thickness": "11"
+				}
+			}
+		}
+	}
+}

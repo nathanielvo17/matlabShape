@@ -1,0 +1,22 @@
+classdef Group
+    %Group: allows for grouping of different components
+    %   Detailed explanation goes here
+    
+    properties
+        name
+        lines = {}
+    end
+    
+    methods
+        function obj = Group(name)
+            obj.name = name;
+        end
+        
+        function obj = addLine(obj,line)
+            sizeOfLines = length(obj.lines);
+            obj.lines(sizeOfLines + 1) = line;
+        end
+        
+    end
+end
+
