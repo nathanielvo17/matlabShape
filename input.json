@@ -7,33 +7,33 @@
 		}
 	},
 	"Groups": {
-		"Group1": {
+		"Group": {
 			"nameID": "Group1",
 			"components":	{
 				"component1": {
 					"nameID": "component1",
-					"origin": "2,3",
-					"angle": "pi/2",
-					"magnitude": "5",
+					"origin": "150,120",
+					"angle": "pi/4",
+					"magnitude": "80",
 					"thickness": "1"
 				},
 				"component2": {
 					"nameID": "component2",
-					"origin": "3,3",
-					"angle": "pi/3",
-					"magnitude": "2",
-					"thickness": "12"
+					"origin": "200,200",
+					"angle": "2*pi",
+					"magnitude": "50",
+					"thickness": "1"
 				}
 			}
 		},
-		"Group2": {
+		"Group": {
 			"nameID":  "Group2",
 			"components": {
 				"component3": {
 					"nameID": "component3",
-					"origin": "23,3",
-					"angle": "pi",
-					"magnitude": "8",
+					"origin": "60,60",
+					"angle": "pi/2",
+					"magnitude": "20",
 					"thickness": "11"
 				}
 			}

@@ -1,0 +1,21 @@
+function [outputImage] = addLineToImage(line,inputImage)
+%UNTITLED6 Summary of this function goes here
+%   Detailed explanation goes here
+
+outputImage = inputImage;
+origin = strsplit(line.origin,',');
+originRow = origin{1};
+originCol = origin{2};
+row = 
+angle = str2num(line.angle);
+delX = cos(angle);
+delY = sin(angle);
+imageDims = size(inputImage);
+while( (row <= imageDims(1))&(col <= imageDims(2))&(row >= 1)&(col >= 1) )
+    roundedRow = round(row);
+    roundedCol = round(col);
+    outputImage(roundedRow,roundedCol) = 1;
+    row = row + delY;
+    col = col + delX;
+end
+

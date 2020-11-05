@@ -1,6 +1,16 @@
 classdef Image
-    %Image Summary of this class goes here
-    %   Detailed explanation goes here
+    %Image Object that holds all of the different components and allows to
+    %build an image
+    %   input params:
+    %       nameID: nameID of the Image
+    %       length: length of image to be built
+    %       width: width of image to be built
+    %   methods:
+    %       Image(): Constructor for Image Class
+    %       addGroup(): Adds component Group to image
+    %       removeGroup(): Removes component Group from image
+    %       buildImage(): Builds image from Image object details
+    
     properties
         imLength
         imWidth
@@ -21,10 +31,28 @@ classdef Image
         end
         
         %todo
-        function outputImage = buildImage(obj)
-            outputImage = zeros(obj.imLength,obj.imWidth);
+        %remove group by nameID
+        function obj = removeGroup(obj,nameID)
+            %search for group
+            for index = 1:1:length(obj.groups)
+                if (nameID == obj.groups{index}.nameID)
+                    obj.groups{index} = [];
+                end
+            end
+            obj.groups = obj.groups(~cellfun('isempty',obj.groups));
         end
         
+        function outputImage = buildImage(obj)
+            outputImage = zeros(obj.imLength,obj.imWidth);
+            for index = 1:1:length(obj.groups)
+                currGroup = obj.groups{index};
+                for index2 = 1:1:length(currGroup.lines)
+                    currLine = currGroup.lines{index2};
+                    disp(currLine.nameID);
+                    outputImage = addLineToImage(currGroup.lines{index2},outputImage);
+                end
+            end
+        end
     end
 end
 

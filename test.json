@@ -1,0 +1,23 @@
+{
+	"Attributes": {
+		"nameID": "Image1",
+		"size": {
+			"imLength": "250",
+			"imWidth": "256"
+		}
+	},
+	"Groups": {
+		"Group1": {
+			"nameID": "Group1",
+			"components":	{
+				"component1": {
+					"nameID": "component1",
+					"origin": "120,120",
+					"angle": "-pi/2",
+					"magnitude": "30",
+					"thickness": "1"
+				}
+			}
+		}
+	}
+}

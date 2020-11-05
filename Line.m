@@ -3,7 +3,7 @@ classdef Line
     %   input params:
     %       nameID: name ID of component
     %       origin: beginning coordinates for line
-    %       angle: angular direction of line
+    %       angle: angular direction of line from the horizontal
     %       magnitude: magnitude of length of line from origin to desired direction
     %       thickness: thickness of line component
     
