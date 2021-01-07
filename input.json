@@ -19,7 +19,7 @@
 				},
 				"component2": {
 					"nameID": "component2",
-					"origin": "200,200",
+					"origin": "100,200",
 					"angle": "2*pi",
 					"magnitude": "50",
 					"thickness": "1"

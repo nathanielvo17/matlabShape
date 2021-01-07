@@ -47,8 +47,6 @@ classdef Image
             for index = 1:1:length(obj.groups)
                 currGroup = obj.groups{index};
                 for index2 = 1:1:length(currGroup.lines)
-                    currLine = currGroup.lines{index2};
-                    disp(currLine.nameID);
                     outputImage = addLineToImage(currGroup.lines{index2},outputImage);
                 end
             end

@@ -1,0 +1,3 @@
+%input image, output image with noise
+function [output_image] = addNoise(input_image, magnitude) %todo add more parameters
+    %generate noise matrix 
