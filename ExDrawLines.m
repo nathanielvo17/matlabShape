@@ -73,11 +73,41 @@ for index = 1:1:length(d)
 end
 
 %%
+%add noise
+imageObj = imageObj.setNoise(.1);
+%monte carlo
 
+%strength of signal compared with amplitude of noise
+SNR = 1;
+
+%%
+%setThickness of line
+
+
+
+
+%%
 image = imageObj.buildImage();
-image = addNoise(image,1); %add noise
-image = -1*(image - 1); %white to black, black to white
+imageMean = mean2(image);
+%image = -1*(image - 1); %white to black, black to white
+showIm(image);
+%colormap('gray');
+
+
+%%info
+imageObj.noise %noise amplitude
+
+%build pyramids
+%% laplacian pyramid
+[image_Lpyr, image_Lpyr_indices] = buildLpyr(image); %pyramid build
 figure(2)
-imagesc(image);
-colormap('gray');
+showLpyr(image_Lpyr, image_Lpyr_indices); %show Laplacian Pyramid
+image_recon_Lpyr = reconLpyr(image_Lpyr, image_Lpyr_indices); %reconstruction
+
+%% steerable pyramid
+[image_Spyr, image_Spyr_indices] = buildSpyr(image); %pyramid build
+figure(3)
+showSpyr(image_Spyr, image_Spyr_indices); %show Steerable Pyramid
+image_recon_Spyr = reconSpyr(image_Spyr, image_Spyr_indices); %reconstruction
+
 

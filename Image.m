@@ -15,6 +15,7 @@ classdef Image
         imLength
         imWidth
         nameID
+        noise
         groups = {}
     end
     
@@ -23,6 +24,7 @@ classdef Image
             obj.imLength = length;
             obj.imWidth = width;
             obj.nameID =  nameID;
+            obj.noise = 0;
         end
         
         function obj = addGroup(obj,group)
@@ -30,6 +32,9 @@ classdef Image
             obj.groups(sizeOfGroups + 1) = group;
         end
         
+        function obj = setNoise(obj,noise)
+            obj.noise = noise;
+        end
         %todo
         %remove group by nameID
         function obj = removeGroup(obj,nameID)
@@ -50,6 +55,7 @@ classdef Image
                     outputImage = addLineToImage(currGroup.lines{index2},outputImage);
                 end
             end
+            outputImage = addNoise(outputImage,obj.noise);
         end
     end
 end
