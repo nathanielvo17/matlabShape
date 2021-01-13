@@ -66,13 +66,26 @@ for index = 1:1:length(d)
            currOriginString = sprintf("%f,%f",currOriginX,currOriginY);
            currLine = Line(sprintf("group%d",index), currOriginString, num2str(currAngle), num2str(currMagnitude), "1");
            currGroup = currGroup.addLine({currLine});
-           
        end 
        imageObj = imageObj.addGroup({currGroup});
    end
 end
 
+%% QUESTIONS 1/13
+%how to determine monte carlo
+% how to define "strength of signal"
+%line "distribution ins slice"
+
+%what is "levels of response"
+% is "residual" the difference between original image and reconstructed
+% image?
+
+
+
+
 %%
+
+
 %add noise
 imageObj = imageObj.setNoise(.1);
 %monte carlo
@@ -96,6 +109,10 @@ showIm(image);
 
 %%info
 imageObj.noise %noise amplitude
+
+%residuals and energy
+
+
 
 %build pyramids
 %% laplacian pyramid

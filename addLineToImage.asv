@@ -19,7 +19,7 @@ while( (row <= imageDims(1))&(col <= imageDims(2))&(row >= 1)&(col >= 1)& ...
     outputImage(round(row),round(col)) = 1;
     %todo thickness
     for index = 0:1:str2double(line.thickness)
-        outputImage(round(row)+index,round(col)+index) = 1;
+        outputImage(roundedRow+index,roundedCol+index) = 1;
     end
 %     thickness = .001;
 %     for index1 = 1:thickness:1
