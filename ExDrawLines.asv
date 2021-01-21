@@ -46,7 +46,7 @@ while 1
   end
   k=k+1;
 end
-
+ 
 %% to draw lines
 for index = 1:1:length(d)
    if (length(d(index).XData) > 1) 
@@ -71,13 +71,35 @@ for index = 1:1:length(d)
    end
 end
 
+%% QUESTIONS 1/13
+%how to determine monte carlo
+
+%how to define "strength of signal"
+
+%what is "distribution in slice"
+
+%what is "levels of response"
+
+%is "residual" the difference between original image and reconstructed image?
+
+
+
+
 %%
+
 
 %add noise
 imageObj = imageObj.setNoise(.1);
+%monte carlo
 
 %strength of signal compared with amplitude of noise
 SNR = 1;
+
+%%
+%setThickness of line
+
+
+
 
 %%
 image = imageObj.buildImage();
@@ -100,16 +122,13 @@ imageObj.noise %noise amplitude
 figure(2)
 showLpyr(image_Lpyr, image_Lpyr_indices); %show Laplacian Pyramid
 image_recon_Lpyr = reconLpyr(image_Lpyr, image_Lpyr_indices); %reconstruction
-Lpyr_residual = image - image_recon_Lpyr; %residual
+Lpyr_residual = image - image_recon_Lpyr; 
 
 %% steerable pyramid
 [image_Spyr, image_Spyr_indices] = buildSpyr(image); %pyramid build
 figure(3)
 showSpyr(image_Spyr, image_Spyr_indices); %show Steerable Pyramid
 image_recon_Spyr = reconSpyr(image_Spyr, image_Spyr_indices); %reconstruction
-Spyr_residual = image - image_recon_Spyr;
 
-%% Energy
-F = fft2(image);
-magImage = abs(F).^2;
-energy = sum(magImage(:));
+
+
